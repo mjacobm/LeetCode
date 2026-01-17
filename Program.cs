@@ -1,6 +1,10 @@
 ﻿//write a main method in c# that prints hello world to the console
 using LeetCode;
 using System;
+using System.Collections.Generic;
+using System.Text.Json.Nodes;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 class Program
 {
     static void Main(string[] args)
@@ -46,11 +50,32 @@ class Program
 
 
         //6.
+        //(Sliding Window + HashSet)
         //Given a string s, find the length of the longest substring without repeating characters.
         //Example: "abcabcbb" → 3("abc")
         Console.WriteLine("Given a string s, find the length of the longest substring without repeating characters.");
         LongestSubstringWithoutRepeatingCharacters LSWRC = new LongestSubstringWithoutRepeatingCharacters();
         Console.WriteLine(LSWRC.LengthOfLongestSubstring("MATHEWJAZQ"));
+
+
+        //7.
+        //(Prefix & Suffix Products)
+        //Return an array where each element is the product of all elements except itself.
+        //Example: [1,2,3,4] → [24,12,8,6]
+        Console.WriteLine("Return an array where each element is the product of all elements except itself.");
+        ProductOfArrayExceptSelf POAES = new ProductOfArrayExceptSelf();
+        int[] num = POAES.ProductExceptSelf([8, 1, 3, 2, 4]);
+        Console.WriteLine(string.Join(",", num));
+
+        //8.
+        //(Sorting + Greedy)
+        //Merge all overlapping intervals.
+        //Example:[[1, 3],[2, 6],[8, 10]] → [[1, 6],[8, 10]]
+        Console.WriteLine("Merge all overlapping intervals.");
+        MergeIntervals MI = new MergeIntervals();
+        int[][] res = MI.Merge([[1, 3], [2, 6], [8, 10]]);
+        Console.WriteLine(string.Join(" | ", res.Select(interval => "[" + string.Join(", ", interval) + "]")));
+
 
     }
 }
